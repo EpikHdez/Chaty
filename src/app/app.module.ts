@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 
 // #region Startup Service
+import { HttpClientModule } from '@angular/common/http';
 import { StartupService } from '@core/startup';
 
 const APPINIT_PROVIDERS = [
@@ -22,7 +23,13 @@ const APPINIT_PROVIDERS = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RouterModule, RoutesModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule,
+    RoutesModule,
+  ],
   providers: [...APPINIT_PROVIDERS],
   bootstrap: [AppComponent],
 })
